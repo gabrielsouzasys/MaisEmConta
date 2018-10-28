@@ -74,40 +74,168 @@
         }
     </script>
 
-    <!-- Hotjar Tracking Code for gabrielsouzasys.github.io -->
-    <!--    <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 1033806,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script> -->
-
-
     <script src="js/App.js"></script>
     <script src="js/validacao.js"></script>
 
 </head>
 
 <body>
+
+    <div class="w3-container w3-card-2 w3-tiny w3-padding-small">
+        <h2 class="w3-center w3-card-2 gs-dark-blue">Mais em Conta</h2>
+
+        <div class="w3-row">
+            <div class="w3-col l2 m2 s2 w3-center">
+                <p>Descrição</p>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <p>Unidade de Medida</p>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <p>Quantidade/ Embalagem</p>
+            </div>
+            <div class="w3-col l4 m4 s4 w3-center">
+                <p>Preço embalagem (R$)</p>
+            </div>
+        </div>
+
+        <div class="w3-row w3-panel w3-card">
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="desc_0" class="w3-input w3-border w3-border-white" value="" placeholder="Ex.: Suco" name="" type="text">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <select id="select_0" class="w3-select w3-border w3-border-white" name="select01" style="color: #ADADAD" onchange="validaOption()">
+                            <option class="gs-option" value="null" selected="selected">...</option>
+                            <option class="gs-option" value="Lt">Lt  - Litros</option>
+                            <option class="gs-option" value="Ml">Ml  - Mililitros</option>
+                            <option class="gs-option" value="Kg">Kg  - Kilos</option>
+                            <option class="gs-option" value="Gr">Gr  - Gramas</option>
+                            <!-- 
+                                <option class="gs-option" value="Cm">Centímetros</option>
+                                <option class="gs-option" value="Mt">Metros</option>
+                            -->
+                        </select>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="qtd_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 1,5" name="" type="number" min=0 step="0.0" tooltip="Tamanho da embalagems">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="vlr_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 6,80" name="" type="number" step="0,0" hint="Valor em Reais">
+            </div>
+        </div>
+
+
+        <div class="w3-row w3-panel w3-card ">
+
+            <div class="w3-col l3 m3 s3 w3-center ">
+                <input id="desc_0" class="w3-input w3-border w3-border-white" value="" placeholder="Ex.: Suco" name="" type="text">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center ">
+                <select id="select_0" class="w3-select w3-border w3-border-white" name="select01" style="color: #ADADAD" onchange="validaOption()">
+                                <option class="gs-option" value="null" selected="selected">...</option>
+                                <option class="gs-option" value="Lt">Lt  - Litros</option>
+                                <option class="gs-option" value="Ml">Ml  - Mililitros</option>
+                                <option class="gs-option" value="Kg">Kg  - Kilos</option>
+                                <option class="gs-option" value="Gr">Gr  - Gramas</option>
+                                <!-- 
+                                    <option class="gs-option" value="Cm">Centímetros</option>
+                                    <option class="gs-option" value="Mt">Metros</option>
+                                -->
+                            </select>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="qtd_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 1,5" name="" type="number" min=0 step="0.0" tooltip="Tamanho da embalagems">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center ">
+                <input id="vlr_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 6,80" name="" type="number" step="0,0" hint="Valor em Reais">
+            </div>
+
+        </div>
+
+        <div class="w3-row w3-panel w3-card">
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="desc_0" class="w3-input w3-border w3-border-white" value="" placeholder="Ex.: Suco" name="" type="text">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <select id="select_0" class="w3-select w3-border w3-border-white" name="select01" style="color: #ADADAD" onchange="validaOption()">
+                                    <option class="gs-option" value="null" selected="selected">...</option>
+                                    <option class="gs-option" value="Lt">Lt  - Litros</option>
+                                    <option class="gs-option" value="Ml">Ml  - Mililitros</option>
+                                    <option class="gs-option" value="Kg">Kg  - Kilos</option>
+                                    <option class="gs-option" value="Gr">Gr  - Gramas</option>
+                                    <!-- 
+                                        <option class="gs-option" value="Cm">Centímetros</option>
+                                        <option class="gs-option" value="Mt">Metros</option>
+                                    -->
+                                </select>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="qtd_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 1,5" name="" type="number" min=0 step="0.0" tooltip="Tamanho da embalagems">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="vlr_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 6,80" name="" type="number" step="0,0" hint="Valor em Reais">
+            </div>
+        </div>
+
+
+        <div class="w3-row w3-panel w3-card">
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="desc_0" class="w3-input w3-border w3-border-white" value="" placeholder="Ex.: Suco" name="" type="text">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <select id="select_0" class="w3-select w3-border w3-border-white" name="select01" style="color: #ADADAD" onchange="validaOption()">
+                                        <option class="gs-option" value="null" selected="selected">...</option>
+                                        <option class="gs-option" value="Lt">Lt  - Litros</option>
+                                        <option class="gs-option" value="Ml">Ml  - Mililitros</option>
+                                        <option class="gs-option" value="Kg">Kg  - Kilos</option>
+                                        <option class="gs-option" value="Gr">Gr  - Gramas</option>
+                                        <!-- 
+                                            <option class="gs-option" value="Cm">Centímetros</option>
+                                            <option class="gs-option" value="Mt">Metros</option>
+                                        -->
+                                    </select>
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="qtd_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 1,5" name="" type="number" min=0 step="0.0" tooltip="Tamanho da embalagems">
+            </div>
+            <div class="w3-col l3 m3 s3 w3-center">
+                <input id="vlr_0" class="w3-input w3-border w3-border-white" placeholder="Ex.: 6,80" name="" type="number" step="0,0" hint="Valor em Reais">
+            </div>
+        </div>
+
+
+        <!--Botões-->
+        <div class="w3-row w3-padding">
+
+            <div id="div_calcular" onclick="startProcess()" class="w3-col l7 m7 s7 w3-center w3-card-2 gs-dark-blue">
+                <button id='gs-btn-calc' class="w3-button  w3-tiny   gs-dark-blue-hover" onclick="startProcess()">Calcular</button>
+            </div>
+
+            <div class="w3-col l1 m1 s1">
+                <p></p>
+            </div>
+
+            <div id="div_modelo" onclick="setModelo()" class="w3-col l4 m4 s4 w3-center gs-dark-blue w3-card-2 ">
+                <button id='gs-btn-model' class="w3-button  w3-tiny gs-dark-blue-hover" onclick="setModelo()">Add Modelo</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <br>
+
+
     <div class="w3-container w3-card-2">
         <h2 class="w3-center w3-card-2 gs-grey">Mais em Conta</h2>
         <div class="w3-responsive">
             <table id="myTable" class="w3-table w3-small">
                 <thead class="w3-tiny">
                     <tr>
-                        <th>Descrição</th>
-                        <th>Unidade de Medida</th>
-                        <th>Quantidade/ Embalagem</th>
+                        <th>Descrição </th>
+                        <th>Unidade de Medida </th>
+                        <th>Quantidade/ Embalagem </th>
                         <th>Preço por embalagem (R$)</th>
                     </tr>
                 </thead>

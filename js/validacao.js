@@ -65,9 +65,18 @@ function validaOption() {
 };
 
 function limparExecucao() {
+
     var linha = document.getElementById('tr_1');
     linha.className = "";
 
     var linha2 = document.getElementById('tr_2');
     linha2.className = "";
+
+    var linha3 = document.getElementById('tr_3');
+    linha3.className = "";
+
+    var linha4 = document.getElementById('tr_4');
+    linha4.className = "";
+
+
 }

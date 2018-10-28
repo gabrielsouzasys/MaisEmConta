@@ -266,13 +266,17 @@ function ordenaUm(a, b) {
 
 function setToScreen(data) {
 
-
+    limparExecucao();
 
     var id_modify = data[0].id;
 
     var linha = document.getElementById('tr_' + id_modify);
 
-    linha.className = "w3-leftbar  w3-green ";
+    linha.className = "w3-leftbar w3-border-light-green w3-red"
+    debugger;
+    var x = setTime();
+
+    linha.className = x;
 
 
     /*
@@ -280,4 +284,14 @@ function setToScreen(data) {
 
        linha.className="w3-leftbar w3-border-red ";
     */
+}
+
+
+function setTime() {
+    debugger;
+    setTimeout(1500);
+
+
+
+    return "w3-leftbar w3-border-green w3-green ";
 }

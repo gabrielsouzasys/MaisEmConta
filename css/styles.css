@@ -12,6 +12,28 @@
     background-color: #2c3e50;
 }
 
+.gs-grey-blue-hover:hover {
+    /*color: white;*/
+    color: white!important;
+    background-color: #1A3D61!important;
+}
+
+.gs-grey-blue {
+    color: white;
+    background-color: #1A3D61;
+}
+
+.gs-dark-blue-hover:hover {
+    /*color: white;*/
+    color: white!important;
+    background-color: #041C34!important;
+}
+
+.gs-dark-blue {
+    color: white;
+    background-color: #041C34;
+}
+
 .gs-green {
     background-color: #22B14C;
 }
