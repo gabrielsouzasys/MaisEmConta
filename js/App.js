@@ -270,11 +270,12 @@ function ordenaUm(a, b) {
 function setToScreen(data) {
     var count = data.length - 1;
     var linha = "";
+    var controle = "";
     limparExecucao();
-
+    debugger;
     for (var i = 0; i < count; i++) {
 
-        if (data[i].preco_calc === data[i + 1].preco_calc) {
+        if (data[i].preco_calc === data[i + 1].preco_calc && controle != "X" ) {
 
             linha = document.getElementById('row_' + data[i].id);
             linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-pale-green w3-green ";
@@ -282,33 +283,34 @@ function setToScreen(data) {
             linha = document.getElementById('row_' + data[i+1].id);
             linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-pale-green w3-green";
 
-/*
-            document.getElementById('row_' + data[i].id).style.backgroundColor = "#4CAF50";
-            document.getElementById("desc_"   + data[i].id).style.backgroundColor = "#4CAF50";
-            document.getElementById("select_" + data[i].id).style.backgroundColor = "#4CAF50";
-            document.getElementById("qtd_"    + data[i].id).style.backgroundColor = "#4CAF50";
-            document.getElementById("vlr_"    + data[i].id).style.backgroundColor = "#4CAF50";
-*/
             document.getElementById("desc_"   + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
             document.getElementById("select_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
             document.getElementById("qtd_"    + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
             document.getElementById("vlr_"    + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
 
-
-
         } else {
-            linha = document.getElementById('row_' + data[0].id);
-            linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-green w3-green"; //w3-leftbar w3-border-red
 
-            if (i != 0) {
-                linha = document.getElementById('row_' + data[i].id);
-                linha.className = "w3-row w3-panel w3-border w3-border-red"
+          if (controle != "X") {
 
-                //Set class para o ultimo indice caso ele nao seja Verde
-                linha = document.getElementById('row_' + data[3].id);
-                linha.className = "w3-row w3-panel w3-border w3-border-red"
-            }
 
+              linha = document.getElementById('row_' + data[0].id);
+              linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-green w3-green"; //w3-leftbar w3-border-red
+
+              document.getElementById("desc_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+              document.getElementById("select_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+              document.getElementById("qtd_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+              document.getElementById("vlr_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+
+              if (i != 0) {
+                  linha = document.getElementById('row_' + data[i].id);
+                  linha.className = "w3-row w3-panel w3-border w3-border-red"
+
+                  //Set class para o ultimo indice caso ele nao seja Verde
+                  linha = document.getElementById('row_' + data[3].id);
+                  linha.className = "w3-row w3-panel w3-border w3-border-red"
+              }
+          }
+          controle = "X";
         }
     }
 
