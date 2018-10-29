@@ -1,6 +1,5 @@
 function validaOption() {
 
-
     for (let i = 0; i < 4; i++) {
         var selector = document.getElementById('select_' + i);
 
@@ -66,17 +65,15 @@ function validaOption() {
 
 function limparExecucao() {
 
-    var linha = document.getElementById('tr_1');
-    linha.className = "";
+    for (var i = 0; i < 4;i++){
 
-    var linha2 = document.getElementById('tr_2');
-    linha2.className = "";
+        document.getElementById('row_' + i).className = "w3-row w3-panel w3-card ";
 
-    var linha3 = document.getElementById('tr_3');
-    linha3.className = "";
-
-    var linha4 = document.getElementById('tr_4');
-    linha4.className = "";
+        document.getElementById("desc_"   + i).className = "w3-input w3-border w3-border-white";
+        document.getElementById("select_" + i).className = "w3-input w3-border w3-border-white";
+        document.getElementById("qtd_"    + i).className = "w3-input w3-border w3-border-white";
+        document.getElementById("vlr_"    + i).className = "w3-input w3-border w3-border-white";
 
 
+    }
 }

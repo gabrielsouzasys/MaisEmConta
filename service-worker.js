@@ -1,27 +1,19 @@
-var CACHE_NAME = 'static-v1';
-var urlsToCache = [
-    '/',
+const CACHE_NAME = 'MaisEmCOnta-v1.0';
+const RESOURCES_TO_PRELOAD = [
     'index.html',
     'css/styles.css',
     'css/w3.css',
-    'js/App.jsapp.js',
-    'js/validacao.js',
     'register-worker.js',
+    'js/App.js',
+    'js/validacao.js',
     'manifest.json'
+    //'offline-404.html'
 ];
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
-            return cache.addAll(urlsToCache);
-        })
-    )
-});
-
 
 // Preload some resources during install
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
+        caches.open(CACHE_NAME).then(function (cache) {
             return cache.addAll(RESOURCES_TO_PRELOAD);
             // if any item isn't successfully added to
             // cache, the whole operation fails.
@@ -32,10 +24,10 @@ self.addEventListener('install', function(event) {
 });
 
 // Delete obsolete caches during activate
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
     event.waitUntil(
-        caches.keys().then(function(keyList) {
-            return Promise.all(keyList.map(function(key) {
+        caches.keys().then(function (keyList) {
+            return Promise.all(keyList.map(function (key) {
                 if (key !== CACHE_NAME) {
                     return caches.delete(key);
                 }
@@ -44,19 +36,18 @@ self.addEventListener('activate', function(event) {
     );
 });
 
-
 // During runtime, get files from cache or -> fetch, then save to cache
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     // only process GET requests
     if (event.request.method === 'GET') {
         event.respondWith(
-            caches.match(event.request).then(function(response) {
+            caches.match(event.request).then(function (response) {
                 if (response) {
                     return response; // There is a cached version of the resource already
                 }
 
                 let requestCopy = event.request.clone();
-                return fetch(requestCopy).then(function(response) {
+                return fetch(requestCopy).then(function (response) {
                     // opaque responses cannot be examined, they will just error
                     if (response.type === 'opaque') {
                         // don't cache opaque response, you cannot validate it's status/success

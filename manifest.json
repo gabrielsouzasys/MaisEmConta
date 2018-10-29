@@ -51,6 +51,6 @@
     "description": "Calcular produtos em embalagens diferentes e dizer qual é o menor valor",
     "orientation": "portrait",
     "display": "standalone",
-    "background_color": "#2c3e50",
-    "theme_color": "#2c3e50"
+    "background_color": "#041C34",
+    "theme_color": "#041C34"
 }

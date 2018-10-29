@@ -1,4 +1,5 @@
 function startProcess() {
+
     limparExecucao();
 
     //busca o objeto com os preços calculados 
@@ -11,8 +12,8 @@ function startProcess() {
     var dados_a_calcular = data; // validaDadosCalculo(data);
 
     //ordena e define quais os itens que são mais em conta (retorna os id's que deverão ser marcados)   
-    dados_a_calcular.pop();
-    dados_a_calcular.pop();
+    // dados_a_calcular.pop();
+    // dados_a_calcular.pop();
     dados_a_calcular.sort(ordenaPreco);
 
     //altera o DOM para exibir em verde os itens mais em conta 
@@ -21,25 +22,35 @@ function startProcess() {
 };
 
 function setModelo() {
+
     document.getElementById("desc_0").value = "Coca Lata";
     document.getElementById("select_0").value = "Ml";
     document.getElementById("qtd_0").value = "600";
     document.getElementById("vlr_0").value = "4.00";
 
-    document.getElementById("desc_1").value = "Coca 1LT";
+    document.getElementById("desc_1").value = "Coca Garrafa";
     document.getElementById("select_1").value = "Lt";
-    document.getElementById("qtd_1").value = "1";
-    document.getElementById("vlr_1").value = "6.50";
+    document.getElementById("qtd_1").value = "2";
+    document.getElementById("vlr_1").value = "8";
 
+    document.getElementById("desc_2").value = "Coca Cola";
+    document.getElementById("select_2").value = "Lt";
+    document.getElementById("qtd_2").value = "2";
+    document.getElementById("vlr_2").value = "8";
+
+    document.getElementById("desc_3").value = "Coca Cola";
+    document.getElementById("select_3").value = "Lt";
+    document.getElementById("qtd_3").value = "1.5";
+    document.getElementById("vlr_3").value = "3.50";
     validaOption();
     limparExecucao();
 }
 
 function getData() {
-    var objData = [{ id: "1", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: "" },
-        { id: "2", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: "" },
-        { id: "3", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: "" },
-        { id: "4", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: "" }
+    var objData = [{id: "0", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: ""},
+        {id: "1", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: ""},
+        {id: "2", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: ""},
+        {id: "3", desc: "", um: "", qtd: "", vlr: "", tipo: "", preco_calc: ""}
     ];
 
     var objLenght = objData.length;
@@ -64,8 +75,8 @@ function getData() {
         } else {
 
             document.getElementById("bloco_msg").style.display = "block"
-                //  document.getElementById("bloco_msg").style.display = "none"
-                ////////////////////////////////////  alert("testes de validação! \n linha  vazia");
+            //  document.getElementById("bloco_msg").style.display = "none"
+            ////////////////////////////////////  alert("testes de validação! \n linha  vazia");
 
             //pegar esse erro e encaminhar para o return desta funcao 
             //mandar a mensagem de erro para a linha vazia ou que só tem uma linha e é necessário 2 linhas ou mais para se comparar
@@ -77,7 +88,8 @@ function getData() {
         return objData;
     } else {
         return "Apenas uma linha preenchida!"
-    };
+    }
+    ;
 
 };
 
@@ -126,11 +138,6 @@ function checkVazio(p_id, p_um, p_qtd, p_vlr) {
     }
     return valida;
 };
-
-
-
-
-
 
 
 //funcao que retrona o valor do preço pela unidade (preço por ML por exemplo)
@@ -184,7 +191,6 @@ function converter(prec, emb, um) {
     }
     return calcular(prec, emb_convertida);
 };
-
 
 
 //Calular valores fracionados
@@ -251,8 +257,6 @@ function validaDadosCalculo(dados) {
 };
 
 
-
-
 function ordenaPreco(a, b) {
     return a.preco_calc - b.preco_calc;
 };
@@ -263,35 +267,60 @@ function ordenaUm(a, b) {
 };
 
 
-
 function setToScreen(data) {
-
+    var count = data.length - 1;
+    var linha = "";
     limparExecucao();
 
-    var id_modify = data[0].id;
+    for (var i = 0; i < count; i++) {
 
-    var linha = document.getElementById('tr_' + id_modify);
+        if (data[i].preco_calc === data[i + 1].preco_calc) {
 
-    linha.className = "w3-leftbar w3-border-light-green w3-red"
-    debugger;
-    var x = setTime();
+            linha = document.getElementById('row_' + data[i].id);
+            linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-pale-green w3-green ";
 
-    linha.className = x;
+            linha = document.getElementById('row_' + data[i+1].id);
+            linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-pale-green w3-green";
+
+/*
+            document.getElementById('row_' + data[i].id).style.backgroundColor = "#4CAF50";
+            document.getElementById("desc_"   + data[i].id).style.backgroundColor = "#4CAF50";
+            document.getElementById("select_" + data[i].id).style.backgroundColor = "#4CAF50";
+            document.getElementById("qtd_"    + data[i].id).style.backgroundColor = "#4CAF50";
+            document.getElementById("vlr_"    + data[i].id).style.backgroundColor = "#4CAF50";
+*/
+            document.getElementById("desc_"   + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+            document.getElementById("select_" + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+            document.getElementById("qtd_"    + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
+            document.getElementById("vlr_"    + data[i].id).className = "w3-input w3-border w3-border-green w3-green";
 
 
-    /*
-       var linha = document.getElementById('tr_' + 2);
 
-       linha.className="w3-leftbar w3-border-red ";
-    */
+        } else {
+            linha = document.getElementById('row_' + data[0].id);
+            linha.className = "w3-row w3-panel w3-card-4 w3-border w3-border-green w3-green"; //w3-leftbar w3-border-red
+
+            if (i != 0) {
+                linha = document.getElementById('row_' + data[i].id);
+                linha.className = "w3-row w3-panel w3-border w3-border-red"
+
+                //Set class para o ultimo indice caso ele nao seja Verde
+                linha = document.getElementById('row_' + data[3].id);
+                linha.className = "w3-row w3-panel w3-border w3-border-red"
+            }
+
+        }
+    }
+
+
+    //var x = setTime();
+    //linha.className = x;
+
 }
 
 
 function setTime() {
     debugger;
     setTimeout(1500);
-
-
-
     return "w3-leftbar w3-border-green w3-green ";
 }
