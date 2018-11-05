@@ -64,7 +64,7 @@ function validaOption() {
 };
 
 function limparExecucao() {
-
+    document.getElementById("bloco_msg").style.display = "none";
     for (var i = 0; i < 4;i++){
 
         document.getElementById('row_' + i).className = "w3-row w3-panel w3-card ";

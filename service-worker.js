@@ -1,8 +1,9 @@
-const CACHE_NAME = 'MaisEmCOnta-v1.0';
+const CACHE_NAME = 'MaisEmConta-v3.0';
 const RESOURCES_TO_PRELOAD = [
     'index.html',
     'css/styles.css',
     'css/w3.css',
+    'favicon.ico',
     'register-worker.js',
     'js/App.js',
     'js/validacao.js',

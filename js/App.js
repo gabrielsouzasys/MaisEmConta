@@ -21,6 +21,10 @@ function startProcess() {
 
     }else if (typeof(data) === 'string'){
         alert("gerar erro")
+
+        document.getElementById("bloco_msg").style.display = "block"
+        //  document.getElementById("bloco_msg").style.display = "none"
+
     }
 
 
@@ -124,9 +128,6 @@ function getData() {
            objData[i].preco_calc = 1000000;
         }
     }
-
-
-
 
 
     if (count > 1) {
