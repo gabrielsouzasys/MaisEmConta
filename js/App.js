@@ -20,9 +20,10 @@ function startProcess() {
     return setToScreen(dados_a_calcular);
 
     }else if (typeof(data) === 'string'){
-        alert("gerar erro")
+     
 
         document.getElementById("bloco_msg").style.display = "block"
+        document.getElementById("id_console").value = data;
         //  document.getElementById("bloco_msg").style.display = "none"
 
     }
