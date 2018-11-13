@@ -70,10 +70,29 @@ function limparExecucao() {
         document.getElementById('row_' + i).className = "w3-row w3-panel w3-card ";
 
         document.getElementById("desc_"   + i).className = "w3-input w3-border w3-border-white";
-        document.getElementById("select_" + i).className = "w3-input w3-border w3-border-white";
+        document.getElementById("select_" + i).className = "w3-input w3-border w3-border-white w3-white";
         document.getElementById("qtd_"    + i).className = "w3-input w3-border w3-border-white";
         document.getElementById("vlr_"    + i).className = "w3-input w3-border w3-border-white";
 
+
+    }
+}
+
+
+function limparCampos() {
+
+
+    limparExecucao();
+
+    document.getElementById("id_console").value = "";
+    for (var i = 0; i < 4;i++){
+
+       // document.getElementById('row_' + i).className = "w3-row w3-panel w3-card ";
+
+        document.getElementById("desc_"   + i).value = "";
+        document.getElementById("select_" + i).value = "";
+        document.getElementById("qtd_"    + i).value = "";
+        document.getElementById("vlr_"    + i).value = "";
 
     }
 }

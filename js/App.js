@@ -20,7 +20,7 @@ function startProcess() {
     return setToScreen(dados_a_calcular);
 
     }else if (typeof(data) === 'string'){
-     
+
 
         document.getElementById("bloco_msg").style.display = "block"
         document.getElementById("id_console").value = data;
@@ -41,9 +41,9 @@ debugger;
     document.getElementById("desc_1").value = "CocaCola";
     document.getElementById("select_1").value = "Lt";
     document.getElementById("qtd_1").value = "1";
-    document.getElementById("vlr_1").value = "3";
+    document.getElementById("vlr_1").value = "1";
 
-    document.getElementById("desc_2").value = "Coca Cola";
+/*    document.getElementById("desc_2").value = "Coca Cola";
     document.getElementById("select_2").value = "Lt";
     document.getElementById("qtd_2").value = "1";
     document.getElementById("vlr_2").value = "4";
@@ -51,7 +51,7 @@ debugger;
     document.getElementById("desc_3").value = "Coca Cola";
     document.getElementById("select_3").value = "Lt";
     document.getElementById("qtd_3").value = "1";
-    document.getElementById("vlr_3").value = "2";
+    document.getElementById("vlr_3").value = "2";*/
     validaOption();
     limparExecucao();
 }
@@ -327,6 +327,9 @@ function setToScreen(data) {
               if (i != 0 && controle == "X") {
                   linha = document.getElementById('row_' + data[i].id);
                   linha.className = "w3-row w3-panel w3-border w3-border-red"
+
+               debugger;//Colocar o fundo branco no select
+                 // document.getElementById("select_" + data[i].id).className = "w3-input w3-border w3-white";
 
                   //Set class para o ultimo indice caso ele nao seja Verde
                   linha = document.getElementById('row_' + data[3].id);
